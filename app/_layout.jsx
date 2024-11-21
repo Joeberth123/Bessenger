@@ -30,6 +30,7 @@ const MainLayout = () => {
     <Stack>
       {/* Define the stack screens */}
       <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Slot /> {/* This renders the appropriate screen depending on the route */}
     </Stack>
   );

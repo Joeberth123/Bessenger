@@ -1,6 +1,7 @@
 // MessagesHomeScreen.js
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import React from 'react';
+import {router} from 'expo-router'
 
 const sampleMessages = [
   { id: '1', sender: 'Alice', message: 'Hey, how are you?' },
@@ -8,7 +9,7 @@ const sampleMessages = [
   { id: '3', sender: 'Charlie', message: 'Do you want to grab lunch?' },
 ];
 
-const MessagesHomeScreen = ({ navigation }) => {
+const MessagesHomeScreen = () => {
   const renderMessageItem = ({ item }) => (
     <TouchableOpacity 
       style={styles.messageContainer} 
@@ -31,7 +32,7 @@ const MessagesHomeScreen = ({ navigation }) => {
           contentContainerStyle={styles.messageList}
         />
       )}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('NewMessage')}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/share')}>
         <Text style={styles.buttonText}>Start a New Conversation</Text>
       </TouchableOpacity>
     </View>

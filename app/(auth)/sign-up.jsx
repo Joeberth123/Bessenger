@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 const SignUp = () => {
   const [form, setForm]=useState({
@@ -22,7 +22,7 @@ const SignUp = () => {
                 resizemode='contain'
                 className="w-[200px] h-[30px] "
               />
-              <Text className="text-2xl text-white mt-5 font-u_regular ">Sign up to  TechFolioHub</Text>
+              <Text className="text-2xl text-white mt-5 font-u_regular ">Sign up to Bessenger</Text>
               <FormField
                   title="Username"
                   value={form.username}
@@ -45,7 +45,7 @@ const SignUp = () => {
               />
               <CustomButton
                   title="Sign In"
-                  handlePress={submit}
+                  handlePress={()=> router.push('sign-in')}
                   containerStyles="w-full mt-7"
                   isLoading={isSubmitting}
               />

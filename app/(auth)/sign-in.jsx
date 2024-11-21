@@ -1,10 +1,9 @@
 import { View, Text, Image, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
-import { Link } from 'expo-router'
+import { Link, router} from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm]=useState({
@@ -18,11 +17,11 @@ const SignIn = () => {
     <SafeAreaView className="bg-blue-950 h-full">
       <ScrollView>
           <View className="w-full justify-center items-center h-full px-4 my-6">
-              <Image source={images.logo}
-                resizemode='contain'
+              <Image 
+                source={require ('../../assets/images/logo.png')}
                 className="w-[300px] h-[50px] "
               />
-              <Text className="text-2xl text-white mt-10 font-u_regular ">Log in to  TechFolioHub</Text>
+              <Text className="text-2xl text-white mt-10 font-u_regular ">Log in to Bessenger</Text>
               <FormField
                   title="Email"
                   value={form.email}
@@ -38,11 +37,10 @@ const SignIn = () => {
                   otherStyles="mt-7"
               />
 
-<CustomButton
+                  <CustomButton
                   title="Sign In"
-                  handlePress={submit}
+                  handlePress={()=> router.push('/home')}
                   containerStyles="w-full mt-7"
-                  isLoading={isSubmitting}
               />
 
         <View className="flex justify-center pt-5 flex-row      gap-2">
